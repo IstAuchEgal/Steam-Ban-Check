@@ -6,5 +6,6 @@ key = '*' # Your steam API-key goes here, you can find it under "https://steamco
 def check_bans(steamid):
     r = requests.get(f'https://api.steampowered.com/ISteamUser/GetPlayerBans/v1/?key={key}&steamids={steamid}')
     print(r.text)
+    r.close()
 
 check_bans('*') # You can put multiple steamids like this: steamid1,steamid2,steamid3
